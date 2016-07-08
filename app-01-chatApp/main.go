@@ -12,7 +12,10 @@ import (
 )
 
 func main() {
+	// A Sinatra like framework for writing websites
 	r := gin.Default()
+
+	// Is a minimalist framework for handling WebSockets
 	m := melody.New()
 
 	r.GET("/", func(c *gin.Context) {
@@ -27,6 +30,7 @@ func main() {
 		m.Broadcast(msg)
 	})
 
+	// gin's default port is 8080
 	r.Run(":3000")
 	log.Println("Initialized On: localhost:3000")
 }
